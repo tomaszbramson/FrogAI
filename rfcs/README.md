@@ -8,6 +8,14 @@ This document is itself governed by the amendment rule at the bottom.
 If you are unsure whether your change needs an RFC, see the decision table
 in [CONTRIBUTING.md](../CONTRIBUTING.md).
 
+Before proposing a new RFC, check
+[`specification/conventions/`](../specification/conventions/README.md) for
+an existing cross-cutting convention (identity, version constraints,
+conformance) your RFC should reference rather than redefine, and check
+[`FUTURE-RFC-CANDIDATES.md`](../FUTURE-RFC-CANDIDATES.md) in case the topic
+is already tracked there with useful context from a prior RFC's Unresolved
+questions.
+
 ## Why RFC-first
 
 A specification that changes based on the last conversation someone had is

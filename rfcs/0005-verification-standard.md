@@ -58,7 +58,7 @@ A Verification Policy MUST be a document with a metadata block containing:
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Globally unique; stable across versions. |
+| `id` | string | Globally unique; stable across versions. See [`specification/conventions/identity.md`](../specification/conventions/identity.md). |
 | `version` | string (SemVer) | Version of this Policy. |
 | `name` | string | Short human-readable name. |
 | `status` | enum | `Draft`, `Active`, `Deprecated`, `Retired` — the same lifecycle reused from RFC-0001/0002/0003, for the same one-vocabulary reason given there. |

@@ -63,7 +63,7 @@ the following required fields:
 | `claim` | string | The exact Claim text being substantiated — SHOULD be copied verbatim from the relevant `postcondition` (RFC-0001) or Rule `statement` (RFC-0003) it corresponds to. |
 | `type` | enum | See §2. |
 | `content` OR `content_ref` | string | Exactly one of these MUST be present. `content`: the artifact inlined directly. `content_ref`: a URI pointing to the artifact, for large or externally-stored evidence (e.g. a full CI log). |
-| `produced_by` | object | `{ id, version, run_id, step_id? }` — which Skill or Workflow Instance (and, for a Workflow, which step) produced this Evidence. |
+| `produced_by` | object | `{ id, version, run_id, step_id? }` — which Skill or Workflow Instance (and, for a Workflow, which step) produced this Evidence. `id` follows [`specification/conventions/identity.md`](../specification/conventions/identity.md). |
 | `timestamp` | string (ISO 8601) | When the Evidence was produced. |
 
 If `content_ref` is used, the Evidence Record MUST also include an

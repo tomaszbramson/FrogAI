@@ -77,7 +77,7 @@ A conformant Skill Instance's metadata block MUST include:
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Globally unique within its declaring namespace. RECOMMENDED form: reverse-DNS-style, e.g. `com.example.release.cut-changelog`. |
+| `id` | string | Globally unique within its declaring namespace; stable across versions. See [`specification/conventions/identity.md`](../specification/conventions/identity.md) for the full convention, including the RECOMMENDED reverse-DNS-style notation (e.g. `com.example.release.cut-changelog`). |
 | `version` | string (SemVer) | Version of this Skill Instance. |
 | `name` | string | Short human-readable name. |
 | `description` | string | One or two sentences: what this Skill does and when to use it. |
@@ -86,7 +86,7 @@ A conformant Skill Instance's metadata block MUST include:
 | `outputs` | list of objects | Each with `name`, `type`, `description`: the structured result the Skill produces, distinct from side effects. |
 | `preconditions` | list of strings | Checkable statements that MUST hold before invocation. Implementations MAY, but are not required by this RFC to, check these automatically. |
 | `postconditions` | list of strings | Checkable statements that MUST hold after a successful execution. This is the Skill's success contract, and is what Evidence (RFC-0004) is produced against. |
-| `side_effects` | list of enum | Zero or more of `filesystem-write`, `vcs-write`, `network`, `package-install`, `external-service`. MUST list every category of side effect the instruction body can cause; MUST NOT omit one that applies. |
+| `side_effects` | list of enum | Zero or more of `filesystem-write`, `vcs-write`, `network`, `package-install`, `external-service`, `memory-write`. MUST list every category of side effect the instruction body can cause; MUST NOT omit one that applies. `memory-write` covers any write of a Memory Record (RFC-0006 §1), independent of `scope` — a Skill writing only `session`-scope Memory still MUST declare it, since scope affects blast radius, not whether a side effect occurred. |
 | `idempotent` | boolean | `true` only if re-invocation under unchanged preconditions is safe and produces no additional side effects beyond the first successful run. |
 
 A metadata block missing any required field is not a conformant Skill

@@ -59,7 +59,7 @@ and consistency reasons.
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Globally unique within its declaring namespace; stable across versions. |
+| `id` | string | Globally unique within its declaring namespace; stable across versions. See [`specification/conventions/identity.md`](../specification/conventions/identity.md). |
 | `version` | string (SemVer) | Version of this Workflow Instance. |
 | `name` | string | Short human-readable name. |
 | `description` | string | What goal this Workflow accomplishes and when to use it. |
@@ -80,7 +80,7 @@ Each entry in `steps` MUST include:
 | Field | Type | Description |
 |---|---|---|
 | `id` | string | Unique within this Workflow Instance (not globally). |
-| `uses` | string | A Skill or Workflow reference: `<id>@<version-constraint>`. A Workflow `uses` referencing a Workflow (directly or transitively, including itself) forming a cycle is INVALID — implementations MUST detect and reject cyclic composition before execution. |
+| `uses` | string | A Skill or Workflow reference: `<id>@<version-constraint>`, where `<version-constraint>` follows [`specification/conventions/version-constraints.md`](../specification/conventions/version-constraints.md). A Workflow `uses` referencing a Workflow (directly or transitively, including itself) forming a cycle is INVALID — implementations MUST detect and reject cyclic composition before execution. |
 | `inputs` | map | Data Bindings: each value is either a literal or a reference of the form `${workflow.inputs.<name>}` or `${steps.<step_id>.outputs.<name>}`. A reference to a step not listed in `depends_on` (see below) is INVALID. |
 | `depends_on` | list of step `id`s | OPTIONAL, default empty. Declares the edges of the DAG explicitly — an implementation MUST NOT infer edges solely from `inputs` references, to keep ordering auditable independent of data-flow parsing. Any step referenced in an `inputs` binding MUST also appear in `depends_on`. |
 | `on_failure` | enum | OPTIONAL, default `abort`. One of `abort` (stop the Workflow Run), `continue` (proceed with independent branches), `retry` (re-attempt per `retry_policy`). |

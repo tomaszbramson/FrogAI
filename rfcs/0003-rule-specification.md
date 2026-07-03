@@ -60,7 +60,7 @@ matter, YAML) and an OPTIONAL free-text rationale body, mirroring Skill
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Globally unique within its declaring namespace; stable across versions. |
+| `id` | string | Globally unique within its declaring namespace; stable across versions. See [`specification/conventions/identity.md`](../specification/conventions/identity.md). |
 | `version` | string (SemVer) | Version of this Rule Instance. |
 | `name` | string | Short human-readable name. |
 | `statement` | string | A single, checkable sentence using an RFC 2119 keyword (`MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`) — this is the Rule's entire normative content. Free prose beyond this belongs in the body, not here. |

@@ -57,12 +57,12 @@ setup, mirroring the shape used by every other primitive in this project.
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Globally unique; stable across versions. |
+| `id` | string | Globally unique; stable across versions. See [`specification/conventions/identity.md`](../specification/conventions/identity.md). |
 | `version` | string (SemVer) | Version of this Manifest. |
 | `name` | string | Short human-readable name (e.g. "FrogAI Adapter for Claude Code"). |
 | `status` | enum | `Draft`, `Active`, `Deprecated`, `Retired` — the lifecycle reused from every prior primitive RFC. |
 | `target_tool` | string | Identifier of the tool this Adapter targets (e.g. `cursor`, `claude-code`, `codex-cli`, `cline`, `roo`, `continue`). |
-| `profile` | string | A Profile reference (`specification/README.md`'s Level 4) naming the exact bundle of Level 1–3 specification versions this Adapter implements — reused rather than inventing a second per-Adapter versioning scheme. |
+| `profile` | string | A Profile reference (`specification/README.md`'s Level 4) naming the exact bundle of Level 1–3 specification versions this Adapter implements, in `<id>@<version-constraint>` form per [`specification/conventions/version-constraints.md`](../specification/conventions/version-constraints.md) — reused rather than inventing a second per-Adapter versioning scheme. |
 | `capabilities` | map | One entry per primitive type (`skill`, `workflow`, `rule`, `evidence`, `verification`, `memory`, `benchmark`) → `full`, `partial`, or `none`. Primitives absent from this map are treated as `none`. |
 | `mappings` | list of Mapping objects | See §3. REQUIRED for every primitive whose `capabilities` entry is `full` or `partial`. |
 

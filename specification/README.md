@@ -23,6 +23,10 @@ comprehensible.
 ```
 specification/
 ├── README.md          Level 0 — this document: the meta-specification
+├── conventions/        Level 0 — cross-cutting conventions shared by every level below
+│   ├── identity.md
+│   ├── version-constraints.md
+│   └── conformance.md
 ├── core/               Level 1 — the primitives an agent is instructed with
 │   ├── skill.md
 │   ├── workflow.md
@@ -43,6 +47,15 @@ specification/
 This document. Defines the hierarchy, the status lifecycle, and the
 versioning rules that every other level must follow. Changes to Level 0
 follow the same amendment rule as [`rfcs/README.md`](../rfcs/README.md).
+
+### Cross-cutting Conventions
+
+[`conventions/`](./conventions/README.md) holds Level 0 rules that every
+level below must follow identically — e.g. the shape of an `id` field or the
+version-constraint syntax used in a reference like `<id>@<version-constraint>`
+— defined once instead of restated, with minor drift, inside each RFC (see
+[MANIFESTO.md](../MANIFESTO.md) principle 10). A Level 1–4 document MUST
+link to the relevant convention rather than restating its content.
 
 ### Level 1 — Core Object Specifications
 

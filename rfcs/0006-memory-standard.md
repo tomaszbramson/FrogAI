@@ -151,8 +151,8 @@ precedence (§3) and mandatory expiration/invalidation states (§4) both
 exist to bound this risk — `global` Memory is explicitly called out as
 higher-risk precisely because its blast radius is largest. A `blocking`
 Rule (RFC-0003) MAY restrict which Skills are permitted to write `global`
-Memory once RFC-0001's `side_effects` enum gains a memory-write category
-(see "Unresolved questions").
+Memory using RFC-0001's `side_effects` enum, which includes a `memory-write`
+category (RFC-0001 §2).
 
 ## Adoption and migration
 
@@ -165,10 +165,12 @@ deferred to RFC-0008 (Adapter Standard).
 
 ## Unresolved questions
 
-- RFC-0001's `side_effects` enum (§2) does not yet include a
-  `memory-write` category; this should be proposed as a revision to
-  RFC-0001 while it remains in Discussion, rather than in this RFC, to
-  respect one-RFC-per-PR scope discipline. Flagged here so it is not lost.
+- ~~RFC-0001's `side_effects` enum (§2) does not yet include a
+  `memory-write` category~~ — **Resolved**: RFC-0001 §2 now includes
+  `memory-write` in the `side_effects` enum, added as part of this
+  foundation-improvement pass. See also
+  [`FUTURE-RFC-CANDIDATES.md`](../FUTURE-RFC-CANDIDATES.md), "Already
+  resolved."
 - Should concurrent writers producing different `value`s for the same
   `(scope, key)` at the same instant have a defined tie-break (e.g.
   last-write-wins by `created_at`), or is this left entirely to
