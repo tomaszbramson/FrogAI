@@ -110,7 +110,7 @@ the **RFC Editor** assigns numbers and tracks status/index bookkeeping;
 | [0001](./0001-skill-specification.md) | Skill Specification | Draft |
 | [0002](./0002-workflow-specification.md) | Workflow Specification | Draft |
 | [0003](./0003-rule-specification.md) | Rule Specification | Draft |
-| [0004](./0004-evidence-standard.md) | Evidence Standard | *pending* |
+| [0004](./0004-evidence-standard.md) | Evidence Standard | Draft |
 | [0005](./0005-verification-standard.md) | Verification Standard | *pending* |
 | [0006](./0006-memory-standard.md) | Memory Standard | *pending* |
 | [0007](./0007-benchmark-standard.md) | Benchmark Standard | *pending* |
