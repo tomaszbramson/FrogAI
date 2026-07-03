@@ -1,0 +1,25 @@
+# Configuration for lychee (https://lychee.cli.rs)
+
+# Don't fail on excluded/skipped links.
+no_progress = true
+
+# Number of retries per link before giving up.
+max_retries = 2
+
+# Timeout (in seconds) per request.
+timeout = 20
+
+# Number of concurrent link checks.
+max_concurrency = 8
+
+# Treat these status codes as valid in addition to the default 2xx range.
+accept = [200, 201, 202, 203, 204, 205, 206, 429]
+
+# Skip links to these hosts/patterns (uncomment and add as needed).
+exclude = []
+
+# Exclude private/loopback addresses to avoid false positives in CI.
+exclude_private = true
+exclude_loopback = true
+
+# Follow redirects but report them (handled by CI log, not treated as errors).

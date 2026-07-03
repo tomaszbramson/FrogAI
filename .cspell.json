@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": ["en_US", "softwareTerms", "misc"],
+  "words": [
+    "FrogAI",
+    "Ollama",
+    "Continue",
+    "Cline",
+    "Roo",
+    "Codex",
+    "tomaszbramson",
+    "postconditions",
+    "frontmatter",
+    "sandboxing",
+    "checkability",
+    "nonconformant",
+    "expirable",
+    "unreviewable",
+    "unrepresentable",
+    "bidirectionality"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    "LICENSE"
+  ]
+}
