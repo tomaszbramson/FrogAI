@@ -45,7 +45,7 @@ Glossary when this RFC is accepted:
   itself).
 - **Side Effect** — any change a Skill may make to state outside its
   return value (filesystem writes, git operations, network calls, package
-  installs).
+  installs, Memory writes).
 - **Idempotency** — the property that re-running a Skill against the same
   preconditions produces the same postconditions without additional
   unintended side effects.

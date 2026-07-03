@@ -122,6 +122,9 @@ resolves per §4; a `Fail` or `Inconclusive` outcome is handled by that
 step's `on_failure` policy (RFC-0002 §3) exactly as a Skill execution
 failure would be.
 
+Retention of Verification results beyond the originating execution is
+governed by RFC-0006 (Memory Standard) §5.
+
 ## Rationale and alternatives
 
 - **Three outcomes, not a boolean.** Rejected a simple pass/fail: an
@@ -174,10 +177,6 @@ enforcement is deferred to RFC-0008 (Adapter Standard).
 - Should a human Verifier be able to override an automated `Fail` (and if
   so, must that override itself produce its own Verification Record with
   a `rationale`)? Left open pending Draft implementation experience.
-- How long must Verification Records be retained, and is that a
-  Verification concern or a Memory (RFC-0006) concern? Left open —
-  leaning toward Memory, since retention is fundamentally a durable-state
-  policy.
 
 ## Decision record
 

@@ -16,6 +16,10 @@ has a bug to fix (see `specification/README.md`, "Relationship to `docs/`").
 - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — how the core objects (Skill,
   Rule, Workflow) and the cross-cutting standards (Evidence, Verification,
   Memory, Benchmark, Adapter) relate to each other as a system.
+- [Conventions](../specification/conventions/README.md) — cross-cutting
+  shared shapes referenced by multiple specifications.
+- [Future RFC Candidates](../FUTURE-RFC-CANDIDATES.md) — topics that may
+  (or may not) become RFCs later.
 
 ## Adding documentation
 
